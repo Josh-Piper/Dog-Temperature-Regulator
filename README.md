@@ -4,11 +4,11 @@ This repository is Deakin University's SIT210 final assessment. We had to create
 ## Overview
 The temperature regulator will measure a dog's temperature, and apply heating/cooling when needed to ensure optimal temperatures are maintained. If the dog's temperature is not being regulated expectedly and is at a dangerously high temperature, a push notification is sent to a user's phone using ITFFF. PWM and digital controls can be used for granular control of the fan to act as a multi-layered system.
 
-![How the system works](./TooHotArchitecture.png)
+![How the system works](./images/TooHotArchitecture.png)
 
-![Flow chart of the system logic](./flow-chart.png "Flow chart of the system logic")
+![Flow chart of the system logic](./images/flow-chart.png "Flow chart of the system logic")
 
-![How the system triggers push notifications](./ITFFF.png)
+![How the system triggers push notifications](./images/ITFFF.png)
 
 
 ## Why is there two files?
@@ -16,12 +16,12 @@ To ensure the code developed was in working, the simulation program Tinkercad wa
 Tinkercad was based on an Arduino device while the solution utilises a Particle Argon and a different fan and heater
 from the proposed motors. Thus, there are small differences between the code to accommodate this.
 
-### [TinkerCad Setup](./tinkercad-code.ino)
-![TinkerCad Schematics](./tinkercad-schematic.png "TinkerCad Schematics")
+### [TinkerCad Setup](./images/tinkercad-code.ino)
+![TinkerCad Schematics](./images/tinkercad-schematic.png "TinkerCad Schematics")
 
-![TinkerCad Device List](./tinkercad-device-list.png "TinkerCad Device List")
+![TinkerCad Device List](./images/tinkercad-device-list.png "TinkerCad Device List")
 
 ### [In-person Setup](./particle-argon-code.ino)
 
-![In-person Setup 1](./in-person-device-set-up-1.png "In-person setup 1")
-![In-person Setup 2](./in-person-device-set-up-2.png "In-person setup 2")
+![In-person Setup 1](./images/in-person-device-set-up-1.png "In-person setup 1")
+![In-person Setup 2](./images/in-person-device-set-up-2.png "In-person setup 2")
