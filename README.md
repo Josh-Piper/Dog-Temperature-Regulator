@@ -10,6 +10,11 @@ The temperature regulator will measure a dog's temperature, and apply heating/co
 
 ![How the system triggers push notifications](./images/ITFFF.png)
 
+## Ease of use
+To make the embedded system easier to test (notifications and hardware wise) we have developed a NextJS web application.
+Here you can view and update the current optimal dog temperature range. This was added since different dog's have different
+temperature needs.
+![Web ui](./images/web-ui.png)
 
 ## Why is there two files?
 To ensure the code developed was in working, the simulation program Tinkercad was used for prototyping purposes.
