@@ -33,8 +33,8 @@ int countTooCold = -1;
 
 // Maximum and Minimum temperatures before deciding if a dog is at a
 // dangerous temperature
-int DANGEROUS_DOG_TOO_COLD_TEMPERATURE = 19;
-int DANGEROUS_DOG_TOO_HOT_TEMPERATURE = 45;
+int DANGEROUS_DOG_TOO_COLD_TEMPERATURE = 12;
+int DANGEROUS_DOG_TOO_HOT_TEMPERATURE = 16;
 
 // Handles sending alert's, for example, when a dog is too hot
 // it will send an alert, but not send another too hot alert
@@ -112,6 +112,18 @@ void turnOffBrownHeater() {
     digitalWrite(brownHeaterPinOut, LOW);
 }
 
+int updateDangerousDogTooHotTemperature(String newHotTemperature) {
+    DANGEROUS_DOG_TOO_HOT_TEMPERATURE = newHotTemperature.toInt();
+
+    return 1;
+}
+
+int updateDangerousDogTooColdTemperature(String newLowTemperature) {
+    DANGEROUS_DOG_TOO_COLD_TEMPERATURE = newLowTemperature.toInt();
+
+    return 1;
+}
+
 // Code that initialised all the required data
 void setup()
 {
@@ -131,6 +143,15 @@ void setup()
     // is a tutorial to learn how to view the standard output
     Serial.begin(9600);
     dht.begin();
+    
+    // Allow Particle interactions with the web user interface for changing the minimum and maximum temperatures
+    // Create GET HTTP requests for variable
+    Particle.variable("DANGEROUS_DOG_TOO_COLD_TEMPERATURE", &DANGEROUS_DOG_TOO_COLD_TEMPERATURE, INT);
+    Particle.variable("DANGEROUS_DOG_TOO_HOT_TEMPERATURE", &DANGEROUS_DOG_TOO_HOT_TEMPERATURE, INT);
+    
+    // Allows to call a function via POST
+    Particle.function("updateDangerousDogTooColdTemperature", updateDangerousDogTooColdTemperature);
+    Particle.function("updateDangerousDogTooHotTemperature", updateDangerousDogTooHotTemperature);
 }
 
 // Reset how long a dog has been too hot or too cold
